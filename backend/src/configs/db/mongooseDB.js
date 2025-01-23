@@ -2,12 +2,14 @@ import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
-    const connectedDB = await mongoose.connect(
-      `${process.env.MONGOOSE_URI}/${process.env.MONGOOSE_DB_NAME}?retryWrites=true&w=majority`
-    );
-    console.log(`connceted To mongoDB host :${connectedDB.connection.host}`);
+    const dbURI = `${process.env.MONGOOSE_URI}/${process.env.MONGOOSE_DB_NAME}?retryWrites=true&w=majority`;
+
+    console.log("Connecting to MongoDB with URI:", dbURI);
+
+    const connectedDB = await mongoose.connect(dbURI); // Connect to MongoDB
+    console.log(`Connected to MongoDB host: ${connectedDB.connection.host}`);
   } catch (error) {
-    console.error(`DB connect faild:${error.message}\n`);
-    process.exit(1);
+    console.error(`MongoDB connection failed: ${error.message}`);
+    process.exit(1); // Exit on failure
   }
 };
