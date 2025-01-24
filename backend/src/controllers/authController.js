@@ -63,7 +63,8 @@ export const signupController = async (req, res) => {
       message: "User created successfully",
       user: {
         ...user._doc,
-        password: undefined, // Don't return the password in the response
+        password: undefined,
+        secret: undefined,
       },
     });
   } catch (error) {
@@ -77,14 +78,8 @@ export const signupController = async (req, res) => {
 
 // login
 export const loginController = async (req, res) => {
-  const { email, password, confirmPassword } = req.body;
+  const { email, password } = req.body;
 
-  if (password !== confirmPassword) {
-    return res.status(400).json({
-      success: false,
-      message: "your password and confirm password doesNotMatch",
-    });
-  }
   try {
     if (!email || !password) {
       return res.status(400).json({
@@ -117,6 +112,7 @@ export const loginController = async (req, res) => {
       user: {
         ...user._doc,
         password: undefined,
+        secret: undefined,
       },
     });
   } catch (error) {

@@ -21,7 +21,7 @@ export const fetchDoctorAndHospitalRecommendations = async (req, res) => {
     } = req.body;
 
     // Check if the necessary data exists in the request
-    if (!symptoms || !age || !gender || !country || !userId) {
+    if (!symptoms || !age || !gender || !country ) {
       return res.status(400).json({
         success: false,
         message: "Missing required patient data",
@@ -53,7 +53,7 @@ export const fetchDoctorAndHospitalRecommendations = async (req, res) => {
     2. **Suggested Actions**: Recommend simple steps (e.g., home remedies, lifestyle changes) and advise consulting a doctor if needed.
     3. **Urgency**: Clearly state if the patient needs immediate medical attention.
     
-    Keep your response short (3-5 sentences), easy to understand, and supportive. Focus on being helpful, precise, and actionable.
+    Keep your response short (5-10 sentences), easy to understand, and supportive. Focus on being helpful, precise, and actionable.
     
     ---
     
@@ -85,7 +85,7 @@ export const fetchDoctorAndHospitalRecommendations = async (req, res) => {
       
       return res.status(200).json({
         success: true,
-        message: "Successfully updated recommendation message",
+        message: "scroll down ",
         data: recommendationMessage, // Return the AI-generated message
       });
     } else {
@@ -97,7 +97,9 @@ export const fetchDoctorAndHospitalRecommendations = async (req, res) => {
         recommendationMessage, // Store the AI-generated message
       });
 
+     if(userId){
       await healthRecord.save();
+     }
 
       return res.status(200).json({
         success: true,

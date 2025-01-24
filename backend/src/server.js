@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
+import { configDotenv } from "dotenv";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import { rateLimit } from "express-rate-limit";
@@ -8,8 +8,7 @@ import { connectDB } from "./configs/db/mongooseDB.js";
 import authRouter from "./routes/authRoutes.js";
 import healthRouter from "./routes/healthRecordRoutes.js";
 import patientRouter from "./routes/patientRoutes.js";
-
-dotenv.config();
+configDotenv();
 
 // Initialize the Express app
 const app = express();
