@@ -48,12 +48,6 @@ HealthPal is a healthcare platform designed to bridge the gap between patients, 
 - Urban users prioritizing convenience and efficiency in healthcare.
 - Hospitals aiming to digitize and optimize operations.
 
-### Additional Features
-- **Multilingual Interface:** Support for regional languages to reach a broader audience.
-- **Health Monitoring Tools:** Integration with wearables or manual input for vitals like blood pressure and heart rate.
-- **Feedback Mechanism:** Ratings and reviews for doctors and hospitals to enhance quality.
-- **Emergency Services:** One-click emergency call and ambulance booking.
-
 ---
 
 ## Future Enhancements
@@ -67,13 +61,5 @@ HealthPal is a healthcare platform designed to bridge the gap between patients, 
 
 ---
 
-## How You Can Contribute
 
-As a supporter, you can:
-- Provide feedback to improve platform features.
-- Share the platform with potential users.
-- Volunteer in development, testing, or promotion efforts.
-- Contribute financially or through expertise to enhance the project.
-
----
 
